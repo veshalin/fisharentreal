@@ -58,7 +58,7 @@ export function ReportSightingPanel() {
             </div>
 
             <p className="font-serif text-base sm:text-lg leading-relaxed text-[#D6DFE6]">
-              Seen something fishy? Was a fish hovering? Watching? Send us everything. We read every report and forward the good ones to absolutely nobody, for your safety.
+              Seen something fishy? Is your goldfish watching you? Are they ignoring your bait but eating your friends? Did your girlfriend leave you for a scuba instructor named Steve with a catamaran? Send us everything.
             </p>
 
             <div className="pt-4 border-t border-[#38BDF8]/20 space-y-4 font-mono text-xs sm:text-sm">

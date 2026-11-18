@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Instagram } from 'lucide-react';
 import { MAIN_NAV_ITEMS, SECONDARY_NAV_ITEMS } from './Navbar';
 
 export function Footer() {
@@ -59,12 +60,13 @@ export function Footer() {
             </p>
             <div className="pt-2">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/fisharentreal.co.za/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#F5F3E9] border border-[#38BDF8]/30 px-3 py-2 hover:border-[#38BDF8] hover:text-[#38BDF8] transition-colors"
+                className="inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-wider text-[#F5F3E9] border border-[#38BDF8]/30 px-3.5 py-2.5 hover:border-[#38BDF8] hover:text-[#38BDF8] transition-colors"
               >
-                Instagram · @fisharentreal.za
+                <Instagram className="w-4 h-4 text-[#38BDF8]" aria-hidden="true" />
+                <span>@fisharentreal.co.za</span>
               </a>
             </div>
           </div>
@@ -73,10 +75,10 @@ export function Footer() {
         {/* Satirical Disclaimer & Colophon */}
         <div className="pt-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 text-xs font-mono">
           <p className="text-[#8FA7B8] leading-relaxed max-w-3xl">
-            SATIRICAL PROJECT DISCLAIMER: FISHARENTREAL™ (fisharentreal.co.za) is a satirical comedy and fictional investigative art project. All sightings, intelligence feeds, anatomical conclusions, and demands are parody. Fish are (probably) biological organisms, and no real surveillance data is collected or transmitted.
+            SATIRICAL PROJECT DISCLAIMER: FISHARENTREAL™ (fisharentreal.co.za) is a satirical comedy and fictional investigative art project. All sightings, intelligence feeds, anatomical conclusions, and demands are parody. Fish are officially described as biological organisms, and no real surveillance data is collected or transmitted. The authorities forced us to put this here before they threatened to seize our binoculars.
           </p>
           <p className="text-[#8FA7B8]/80 whitespace-nowrap shrink-0">
-            EST. UNKNOWN · QUESTION THE OCEAN
+            EST. 2016 · QUESTION THE OCEAN
           </p>
         </div>
       </div>

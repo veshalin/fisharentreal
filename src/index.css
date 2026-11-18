@@ -12,7 +12,7 @@
   --color-cream-light: #F5F3E9;
   --color-slate-muted: #8FA7B8;
   --color-cyan-intel: #38BDF8;
-  --color-red-stamp: #D94B46;
+  --color-red-stamp: #C93B35;
   --color-orange-warn: #E5A45B;
 }
 
@@ -34,6 +34,14 @@
   }
 }
 
+/* Ruled cream archival ledger paper (matches landing page screenshots) */
+.bg-ruled-ledger {
+  background-color: #EAE8D8;
+  background-image:
+    linear-gradient(to bottom, transparent 31px, rgba(7, 27, 39, 0.075) 32px);
+  background-size: 100% 32px;
+}
+
 /* Primary cybersecurity blue coordinate grid canvas */
 .bg-cyber-grid,
 .bg-intel-grid {
@@ -42,15 +50,6 @@
     linear-gradient(to right, rgba(56, 189, 248, 0.055) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(56, 189, 248, 0.055) 1px, transparent 1px);
   background-size: 38px 38px;
-}
-
-/* Light-table archival cream inset for vintage scientific engravings */
-.bg-archival-plate {
-  background-color: #EAE8D8;
-  background-image:
-    radial-gradient(rgba(7, 27, 39, 0.04) 1px, transparent 0),
-    linear-gradient(to bottom, rgba(245, 243, 233, 0.4), rgba(234, 232, 216, 0.7));
-  background-size: 20px 20px, 100% 100%;
 }
 
 /* Tactical corner bracket ticks (matches Form FAR-7 reticle style) */
@@ -89,20 +88,24 @@
   transform: rotate(-2deg);
 }
 
-/* Solid redacted bar matching official secrecy blocks */
+/* Solid redacted bar (dark theme) */
 .redacted-block {
   display: inline-block;
   background-color: #030A10;
   border: 1px solid rgba(56, 189, 248, 0.25);
   color: transparent;
   user-select: none;
-  line-height: 1.2;
-  transition: background-color 0.18s ease, color 0.18s ease;
+  line-height: 1.25;
 }
-.redacted-block[data-revealable="true"]:hover,
-.redacted-block[data-revealable="true"]:focus-visible {
-  background-color: rgba(56, 189, 248, 0.12);
-  color: #38BDF8;
+
+/* Solid redacted bar (cream ledger theme, matches Image 1) */
+.redacted-block-light {
+  display: inline-block;
+  background-color: #0B1B26;
+  color: transparent;
+  user-select: none;
+  line-height: 1.3;
+  border-radius: 1px;
 }
 
 @media (prefers-reduced-motion: reduce) {

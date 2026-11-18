@@ -41,63 +41,69 @@ export function WitnessesPage() {
   };
 
   return (
-    <div className="bg-cyber-grid text-[#F5F3E9] py-14 sm:py-20">
-      <div className="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        {/* Header */}
-        <header className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[#38BDF8]/20">
-          <div className="max-w-2xl space-y-3">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#38BDF8]">
-              {WITNESS_HEADER.kicker}
-            </p>
-            <h1 className="font-display text-5xl sm:text-7xl font-extrabold uppercase tracking-tight text-[#F5F3E9]">
-              {WITNESS_HEADER.heading}
-            </h1>
-            <p className="font-serif text-lg sm:text-xl leading-relaxed text-[#D6DFE6]">
-              {WITNESS_HEADER.intro}
-            </p>
-          </div>
+    <div>
+      {/* Cyber Blue Header */}
+      <div className="bg-cyber-grid text-[#F5F3E9] py-14 sm:py-16 border-b border-[#38BDF8]/20">
+        <div className="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="max-w-2xl space-y-3">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#38BDF8]">
+                {WITNESS_HEADER.kicker}
+              </p>
+              <h1 className="font-display text-5xl sm:text-7xl font-extrabold uppercase tracking-tight text-[#F5F3E9]">
+                {WITNESS_HEADER.heading}
+              </h1>
+              <p className="font-serif text-lg sm:text-xl leading-relaxed text-[#D6DFE6]">
+                {WITNESS_HEADER.intro}
+              </p>
+            </div>
 
-          <button
-            type="button"
-            onClick={() => setDrawerOpen(true)}
-            className="inline-flex items-center gap-2 px-5 py-3 bg-[#38BDF8] text-[#06141E] font-mono text-xs font-semibold uppercase tracking-[0.1em] hover:bg-[#7DD3FC] transition-colors whitespace-nowrap shrink-0 cursor-pointer self-start md:self-auto"
-          >
-            <MessageSquarePlus className="w-4 h-4" aria-hidden="true" />
-            Submit a Witness Report
-          </button>
-        </header>
-
-        {/* Testimonial Carousel Stage */}
-        <section aria-label="Witness testimonial carousel">
-          <WitnessCarousel
-            witnesses={witnesses}
-            activeIndex={activeIndex}
-            onChangeIndex={setActiveIndex}
-          />
-        </section>
-
-        {/* Archive List Preview */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {witnesses.map((w, idx) => (
             <button
-              key={w.id}
               type="button"
-              onClick={() => setActiveIndex(idx)}
-              className={`text-left p-5 border transition-colors cursor-pointer ${
-                idx === activeIndex
-                  ? 'bg-[#0E2738] border-[#38BDF8]'
-                  : 'bg-[#0A1E2C]/70 border-[#38BDF8]/15 hover:border-[#38BDF8]/40'
-              }`}
+              onClick={() => setDrawerOpen(true)}
+              className="inline-flex items-center gap-2 px-5 py-3 bg-[#38BDF8] text-[#06141E] font-mono text-xs font-semibold uppercase tracking-[0.1em] hover:bg-[#7DD3FC] transition-colors whitespace-nowrap shrink-0 cursor-pointer self-start md:self-auto"
             >
-              <div className="flex items-center justify-between gap-2 font-mono text-[11px] text-[#38BDF8] mb-2">
-                <span>{w.caseFile}</span>
-                <span className="text-[#8FA7B8]">{w.initials}</span>
-              </div>
-              <p className="font-serif text-sm text-[#D6DFE6] line-clamp-2">&ldquo;{w.quote}&rdquo;</p>
-              <p className="font-mono text-xs text-[#F5F3E9] mt-3">{w.name}</p>
+              <MessageSquarePlus className="w-4 h-4" aria-hidden="true" />
+              Submit a Witness Report
             </button>
-          ))}
-        </section>
+          </header>
+        </div>
+      </div>
+
+      {/* Beige Archival Paper Witness Accounts */}
+      <div className="bg-ruled-ledger text-[#071B27] py-14 sm:py-20">
+        <div className="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <section aria-label="Witness testimonial carousel">
+            <WitnessCarousel
+              witnesses={witnesses}
+              activeIndex={activeIndex}
+              onChangeIndex={setActiveIndex}
+              variant="cream"
+            />
+          </section>
+
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {witnesses.map((w, idx) => (
+              <button
+                key={w.id}
+                type="button"
+                onClick={() => setActiveIndex(idx)}
+                className={`text-left p-5 border transition-colors cursor-pointer ${
+                  idx === activeIndex
+                    ? 'bg-[#F5F3E9] border-[#C93B35] shadow-xs'
+                    : 'bg-[#F5F3E9]/85 border-[#071B27]/18 hover:border-[#071B27]/50'
+                }`}
+              >
+                <div className="flex items-center justify-between gap-2 font-mono text-[11px] text-[#C93B35] font-semibold mb-2">
+                  <span>{w.caseFile}</span>
+                  <span className="text-[#071B27]/60">{w.initials}</span>
+                </div>
+                <p className="font-serif text-sm text-[#071B27]/85 line-clamp-2">&ldquo;{w.quote}&rdquo;</p>
+                <p className="font-mono text-xs font-semibold text-[#071B27] mt-3">{w.name}</p>
+              </button>
+            ))}
+          </section>
+        </div>
       </div>
 
       {/* Submission Modal */}

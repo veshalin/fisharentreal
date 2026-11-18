@@ -15,7 +15,7 @@ export interface FindingItem {
 }
 
 export const EVIDENCE_HEADER = {
-  heading: 'EVIDENCE',
+  heading: 'THE FACTS',
   intro:
     'Six findings our researchers were told, in writing, to stop publishing. We published them anyway. Read the findings, then the anatomy.',
 };
@@ -86,13 +86,13 @@ export const SIX_FINDINGS: FindingItem[] = [
     refNumber: 'FINDING 005',
     department: 'INFRASTRUCTURE CORRELATION LAB',
     title: 'THEY FOLLOW THE MONEY',
-    body: 'Every major aquarium on Earth is within 400 metres of a municipal data centre. Coincidence is a word invented by people who have never looked at a map.',
+    body: "Every major aquarium on Earth sits within 400 metres of a municipal data centre. Look at Cape Town: why is the Two Oceans Aquarium even called 'Two Oceans'? Nobody needs two oceans inside one building unless one tank is uploading and the other is downloading. Coincidence is a word invented by people who have never looked at a map.",
     statistic: '400M',
-    caption: 'Average proximity',
-    footnote: 'Measured from Cape Town Waterfront glass tanks to nearest fibre trunk manhole.',
-    deptPrompt: 'When asked about fibre conduits beneath Waterfront tanks, they said:',
-    deptRedactedLines: ['COOLING PIPES ARE SOLELY FOR', 'PENGUIN WIFI AND TICKETING'],
-    deptExcuse: 'Remainder of municipal schematic classified since 1981.',
+    caption: 'Max distance to fibre node',
+    footnote: 'Measured from the Two Oceans Aquarium shark tunnel to the nearest V&A Waterfront municipal data vault.',
+    deptPrompt: 'When asked about two separate oceans sharing one basement at the V&A, they said:',
+    deptRedactedLines: ['TWO OCEANS SERVERS HANDLE', 'PENGUIN WI-FI AND TICKETING'],
+    deptExcuse: 'Remainder of Two Oceans Aquarium plumbing schematic classified since 1995.',
     iconName: 'mapPin',
     classification: 'CORRELATED',
   },

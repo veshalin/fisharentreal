@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Crosshair } from 'lucide-react';
 import { ANATOMY_HEADER, ANATOMY_PARTS } from '../data/anatomy';
-import { ResilientImage } from '../components/ResilientImage';
+import { SpecimenDiagram } from '../components/SpecimenDiagram';
 
 export function AnatomyPage() {
   const [selectedId, setSelectedId] = useState<string>(ANATOMY_PARTS[0].id);
@@ -29,7 +29,7 @@ export function AnatomyPage() {
 
         {/* Two-Column Forensic Specimen Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-          {/* Left Sticky Plate with Visible Funny Callout Labels */}
+          {/* Left Sticky Plate with Non-Overlapping Margin Labels & Arrows */}
           <div className="lg:col-span-7 lg:sticky lg:top-24 reticle-frame bg-[#0A1E2C] border border-[#38BDF8]/25 p-4 sm:p-6">
             <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b border-[#38BDF8]/20 font-mono text-[11px] uppercase tracking-widest text-[#8FA7B8]">
               <span>SPECIMEN DIAGRAM · LATERAL CUTAWAY</span>
@@ -39,39 +39,12 @@ export function AnatomyPage() {
               </span>
             </div>
 
-            {/* Plate Image + Interactive Annotated Callout Tags */}
-            <div className="relative w-full overflow-hidden border border-[#38BDF8]/30 bg-[#EAE8D8]">
-              <ResilientImage
-                src="/src/assets/images/anatomy_specimen_plate_1794931332761.jpg"
-                alt="Vintage scientific anatomical lithograph of a fish cutaway specimen with suspicious features labelled"
-                fallbackTitle="Anatomical Plate IV"
-                className="w-full h-auto block select-none"
-              />
-
-              {ANATOMY_PARTS.map((part) => {
-                const active = part.id === selectedId;
-                return (
-                  <button
-                    key={part.id}
-                    type="button"
-                    onClick={() => setSelectedId(part.id)}
-                    aria-label={`Inspect ${part.name}: ${part.shortLabel}`}
-                    aria-pressed={active}
-                    style={{ left: `${part.xPercent}%`, top: `${part.yPercent}%` }}
-                    className={`absolute -translate-x-1/2 -translate-y-1/2 inline-flex items-center gap-1.5 px-2 py-1 font-mono text-[9px] sm:text-[10px] uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#38BDF8] ${
-                      active
-                        ? 'bg-[#D94B46] text-[#F5F3E9] border border-[#F5F3E9] scale-110 z-20'
-                        : 'bg-[#06141E]/92 text-[#F5F3E9] border border-[#38BDF8]/70 hover:bg-[#38BDF8] hover:text-[#06141E] z-10'
-                    }`}
-                  >
-                    <span className={`font-bold ${active ? 'text-[#F5F3E9]' : 'text-[#E5A45B]'}`}>
-                      {part.index}
-                    </span>
-                    <span className="hidden md:inline">{part.shortLabel}</span>
-                  </button>
-                );
-              })}
-            </div>
+            <SpecimenDiagram
+              parts={ANATOMY_PARTS}
+              variant="cyber"
+              selectedId={selectedId}
+              onSelect={setSelectedId}
+            />
 
             <p className="font-mono text-xs text-[#8FA7B8] mt-3">
               {ANATOMY_HEADER.plateCaption}
